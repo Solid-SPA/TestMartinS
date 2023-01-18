@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="car_service_form_view" model="ir.ui.view">
+            <field name="name">car.service.form</field>
+            <field name="model">car.service</field>
+            <field name="arch" type="xml">
+                <form string="Car Service">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Input Car Service Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="create_date"/>
+                            </group>
+                            <group>
+
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="car_service_tree_view" model="ir.ui.view">
+            <field name="name">car.service.tree</field>
+            <field name="model">car.service</field>
+            <field name="arch" type="xml">
+                <tree string="Car Service">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="car_service_act_window" model="ir.actions.act_window">
+            <field name="name">Car Service</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">car.service</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no car services yet click here to add new Car Service.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Car Services" id="car_service_menu_item" parent="sale.sale_order_menu"
+                  action="car_service.car_service_act_window"/>
+
+    </data>
+</odoo>

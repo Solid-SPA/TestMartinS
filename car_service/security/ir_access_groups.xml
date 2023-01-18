@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <!-- CAR SERVICE-->
+        <record id="access_car_service_admin" model="ir.model.access">
+            <field name="name">Car Service Admin</field>
+            <field name="model_id" ref="car_service.model_car_service"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_car_service_user" model="ir.model.access">
+            <field name="name">Car Service User</field>
+            <field name="model_id" ref="car_service.model_car_service"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+    </data>
+</odoo>
